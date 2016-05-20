@@ -32,7 +32,7 @@
 #include "Kernels.h"
 #include "Sample.h"
 #include "Rect.h"
-#include "GraphUtils/GraphUtils.h"
+#include "GraphUtils.h"
 
 #include <Eigen/Array>
 

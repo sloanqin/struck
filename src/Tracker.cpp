@@ -30,7 +30,7 @@
 #include "ImageRep.h"
 #include "Sampler.h"
 #include "Sample.h"
-#include "GraphUtils/GraphUtils.h"
+#include "GraphUtils.h"
 
 #include "HaarFeatures.h"
 #include "RawFeatures.h"

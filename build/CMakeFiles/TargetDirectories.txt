@@ -1,0 +1,1 @@
+/home/sloan/code/struck/build/CMakeFiles/struck.dir

@@ -49,7 +49,7 @@ void rectangle(Mat& rMat, const FloatRect& rRect, const Scalar& rColour)
 int main(int argc, char* argv[])
 {
 	// read config file
-	string configPath = "config.txt";
+	string configPath = "../docs/config.txt";
 	if (argc > 1)
 	{
 		configPath = argv[1];
@@ -117,6 +117,7 @@ int main(int argc, char* argv[])
 		}
 		string framesLine;
 		getline(framesFile, framesLine);
+		printf("%s", framesLine.c_str());
 		sscanf(framesLine.c_str(), "%d,%d", &startFrame, &endFrame);
 		if (framesFile.fail() || startFrame == -1 || endFrame == -1)
 		{
@@ -124,7 +125,7 @@ int main(int argc, char* argv[])
 			return EXIT_FAILURE;
 		}
 		
-		imgFormat = conf.sequenceBasePath+"/"+conf.sequenceName+"/imgs/img%05d.png";
+		imgFormat = conf.sequenceBasePath+"/"+conf.sequenceName+"/img/%04d.jpg";//qyy changed
 		
 		// read first frame to get size
 		char imgPath[256];
@@ -134,7 +135,7 @@ int main(int argc, char* argv[])
 		scaleH = (float)conf.frameHeight/tmp.rows;
 		
 		// read init box from ground truth file
-		string gtFilePath = conf.sequenceBasePath+"/"+conf.sequenceName+"/"+conf.sequenceName+"_gt.txt";
+		string gtFilePath = conf.sequenceBasePath+"/"+conf.sequenceName+"/"+"groundtruth_rect.txt";//qyy changed
 		ifstream gtFile(gtFilePath.c_str(), ios::in);
 		if (!gtFile)
 		{
